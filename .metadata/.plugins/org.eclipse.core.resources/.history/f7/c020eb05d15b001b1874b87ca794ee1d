@@ -1,0 +1,27 @@
+package com.persistent.InventorySystem;
+
+public class OrderItem {
+	private StockItem stockItem;
+	private int numberOfItems;
+	public OrderItem(int i, StockItem stockitemByName) {
+		// TODO Auto-generated constructor stub
+		this.numberOfItems = i;
+		this.stockItem = stockitemByName;
+	}
+	public StockItem getStockItem() {
+		return stockItem;
+	}
+	public void setStockItem(StockItem stockItem) {
+		this.stockItem = stockItem;
+	}
+	public int getNumberOfItems() {
+		return numberOfItems;
+	}
+	public void setNumberOfItems(int numberOfItems) {
+		this.numberOfItems = numberOfItems;
+	}
+	
+	public double getTotal() {
+		return numberOfItems*stockItem.getItemPrice();
+	}
+}

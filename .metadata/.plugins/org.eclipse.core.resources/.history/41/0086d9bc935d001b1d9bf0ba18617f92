@@ -1,0 +1,23 @@
+package com.psl.training.dao;
+
+public class Sample {
+	static String solve(String str) {
+		char[] ch=str.toCharArray();
+		char temp;
+		if(str.length()%2==0) {
+			for(int i=0;i<str.length();i++) {
+				temp = ch[0];
+				ch[0] = ch[1];
+				ch[1] = temp;
+			}	
+		}
+		return str.valueOf(ch);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s = "afafas";
+		System.out.println(solve(s));
+	}
+
+}

@@ -1,0 +1,50 @@
+package com.persistent.InventorySystem;
+
+import java.time.LocalDate;
+import java.util.Date;
+
+public class PurchaseOrder {
+	private int poNumber;
+	private LocalDate orderDate;
+//	private LocalDate shipDate;
+	private OrderItem oI[];
+	public void setoI(OrderItem[] oI) {
+		this.oI = oI;
+	}
+	public int getPoNumber() {
+		return poNumber;
+	}
+	public void setPoNumber(int poNumber) {
+		this.poNumber = poNumber;
+	}
+	public Date getOrderDate() {
+		return orderDate;
+	}
+	public void setOrderDate(Date orderDate) {
+		this.orderDate = orderDate;
+	}
+	public boolean isShipped() {
+		if(orderDate.compareTo(new Date()) > 0) {
+		    return false;
+		} else {
+		    return true;
+		} 
+	}
+	public double sumItems() {
+		double s = 0;
+		for(int i=0;i<oI.length;i++) {
+			s = s + oI[i].getTotal();
+		}
+		return s;
+	}
+	public void setShipDate(Date date) {
+		this.shipDate = date;
+	}
+	public void create(int poNumber,Date orderDate) {
+		this.poNumber = poNumber;
+		this.orderDate = orderDate;
+	}
+	public OrderItem[] getItems() {
+		return oI;
+	}
+}

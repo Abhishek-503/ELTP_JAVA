@@ -1,0 +1,213 @@
+/*
+		
+		System.out.println("+++++++++++++++++++");
+		
+		System.out.println("========================");
+		
+		for (int i = 0; i < c.length; i++) {
+			if(c[i].pO!=null) {
+				System.out.println(c[i].getName()+"|"+(new Date()));
+				double s = 0;
+				for (int j = 0; j < c[i].pO.length; j++) {
+					System.out.println("Order "+(j+1)+" contains "+c[i].pO.length+" items:\n"+"+++++++++++++++");
+					double sum = 0;
+					for (int k = 0; k < c[i].pO[j].oI.length; k++) {
+						System.out.println("Order Item"+(k+1)+" is : ");
+						System.out.print(c[i].pO[j].oI[k].getNumberOfItems()+"|");
+						System.out.print(c[i].pO[j].oI[k].getStockItem().getItemDescription()+"|");
+						System.out.print(c[i].pO[j].oI[k].getStockItem().getItemPrice()+"|");
+						System.out.println("Total :"+c[i].pO[j].oI[k].getStockItem().getItemPrice()*c[i].pO[j].oI[k].getNumberOfItems());
+						sum = sum + c[i].pO[j].oI[k].getStockItem().getItemPrice()*c[i].pO[j].oI[k].getNumberOfItems();
+						System.out.println("``````````````````````````");
+					}
+					System.out.println("Total sum of order"+(j+1)+" is :"+sum);
+					s = s+sum;
+				}
+				System.out.println("Total sum of "+c[i].getName()+" is :"+s);
+				
+				System.out.println("---------------");
+			}
+		}
+		*/
+package com.persistent.InventorySystem.Test;
+
+import java.util.Date;
+
+import com.persistent.InventorySystem.Customer;
+import com.persistent.InventorySystem.OrderItem;
+import com.persistent.InventorySystem.PurchaseOrder;
+import com.persistent.InventorySystem.StockItem;
+
+public class Test {
+
+	public Customer[] initCustomer() {
+		Customer c[] = new Customer[3];
+		c[0] = new Customer(1, "Jamie");
+		c[1] = new Customer(2, "Bill");
+		c[2] = new Customer(3, "Joe");
+		return c;
+	}
+	public Test() {
+		initStock();
+	}
+	public void initStock() {
+		StockItem apple = new StockItem();
+		apple.setItemDescription("Apple");
+		apple.setItemNumber(100);
+		apple.setItemPrice(15.0);
+		StockItem milk = new StockItem();
+		milk.setItemDescription("Milk");
+		milk.setItemNumber(101);
+		milk.setItemPrice(26.0);
+		StockItem egg = new StockItem();
+		egg.setItemDescription("Egg");
+		egg.setItemNumber(102);
+		egg.setItemPrice(5.4);
+		StockItem chicken = new StockItem();
+		chicken.setItemDescription("Chicken");
+		chicken.setItemNumber(103);
+		chicken.setItemPrice(150.3);
+		StockItem orange = new StockItem();
+		orange.setItemDescription("Orange");
+		orange.setItemNumber(103);
+		orange.setItemPrice(5.0);
+	}
+	public void placeOrders()
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Test t = new Test();
+		Customer[] c = t.initCustomer();
+		c[0].pO = new PurchaseOrder[2];
+		c[0].pO[0] = new PurchaseOrder();
+		c[0].pO[0].setPoNumber(1);
+		c[0].pO[0].oI = new OrderItem[3];
+		c[0].pO[0].oI[0] = new OrderItem();
+		c[0].pO[0].oI[0].setNumberOfItems(2);
+		c[0].pO[0].oI[0].setStockItem(milk);
+		c[0].pO[0].oI[1] = new OrderItem();
+		c[0].pO[0].oI[1].setNumberOfItems(2);
+		c[0].pO[0].oI[1].setStockItem(chicken);;
+		c[0].pO[0].oI[2] = new OrderItem();
+		c[0].pO[0].oI[2].setNumberOfItems(12);
+		c[0].pO[0].oI[2].setStockItem(egg);;
+		c[0].pO[1] = new PurchaseOrder();
+		c[0].pO[1].setPoNumber(2);;
+		c[0].pO[1].oI = new OrderItem[2];
+		c[0].pO[1].oI[0] = new OrderItem();
+		c[0].pO[1].oI[0].setStockItem(apple);
+		c[0].pO[1].oI[0].setNumberOfItems(5);
+		c[0].pO[1].oI[1] = new OrderItem();
+		c[0].pO[1].oI[1].setStockItem(orange);
+		c[0].pO[1].oI[1].setNumberOfItems(10);
+		c[1].pO = new PurchaseOrder[1];
+		c[1].pO[0] = new PurchaseOrder();
+		c[1].pO[0].setPoNumber(3);
+		c[1].pO[0].oI = new OrderItem[2];
+		c[1].pO[0].oI[0] = new OrderItem();
+		c[1].pO[0].oI[0].setStockItem(chicken);
+		c[1].pO[0].oI[0].setNumberOfItems(5);
+		c[1].pO[0].oI[1] = new OrderItem();
+		c[1].pO[0].oI[1].setNumberOfItems(10);
+		c[1].pO[0].oI[1].setStockItem(apple);;
+		c[2].pO = null;
+		//4.	Get all the orders to be shipped and print labels
+		System.out.println(" name | id | description | quantity ");
+		for(Customer cu: c) {
+			if(cu.getpO()!=null) {
+				for(PurchaseOrder po:cu.getpO()) {
+					for(OrderItem oi:po.getItems()) {
+						System.out.print(cu.getName()+"|"+po.getPoNumber()+"|"+oi.getStockItem().getItemDescription()+"|"+oi.getNumberOfItems());
+						System.out.println();
+					}
+				}
+			}
+		}
+		//ship first order for jamie
+		System.out.println("-----------------------------");
+		for (Customer cu: c) {
+			if(cu.getName().equals("Jamie")){
+				System.out.println("Jamie's 1st order");
+				for (int k = 0; k < cu.getpOByNo(0).getoI().length; k++) {
+					System.out.println(cu.getpOByNo(0).getoIByNumber(k).getNumberOfItems());
+					System.out.println(cu.getpOByNo(0).getoIByNumber(k).getStockItem().getItemDescription());
+					System.out.println(cu.getpOByNo(0).getoIByNumber(k).getStockItem().getItemNumber());
+					System.out.println(cu.getpOByNo(0).getoIByNumber(k).getStockItem().getItemPrice());
+				}
+			}
+		}
+		
+		//6.	Ship Bill’s order
+		System.out.println("-----------------------------");
+		for (Customer cu: c) {
+			if(cu.getName().equals("Bill")){
+				System.out.println("Bill's orders");
+				if(cu.getpO()!=null) {
+					for (PurchaseOrder po:cu.getpO()) {
+						for(OrderItem oi:po.getItems()) {
+							System.out.println(oi.getNumberOfItems());
+							System.out.println(oi.getStockItem().getItemDescription());
+							System.out.println(oi.getStockItem().getItemNumber());
+							System.out.println(oi.getStockItem().getItemPrice());
+							System.out.println();
+						}
+					}
+				}
+			}
+		}
+		//7.	Ship Jamie’s order
+		System.out.println("-----------------------------");
+		for (Customer cu: c) {
+			if(cu.getName().equals("Jamie")){
+				System.out.println("Jamie's orders");
+				if(cu.getpO()!=null) {
+					for (PurchaseOrder po:cu.getpO()) {
+						for(OrderItem oi:po.getItems()) {
+							System.out.println(oi.getNumberOfItems());
+							System.out.println(oi.getStockItem().getItemDescription());
+							System.out.println(oi.getStockItem().getItemNumber());
+							System.out.println(oi.getStockItem().getItemPrice());
+							System.out.println();
+						}
+					}
+				}
+			}
+		}
+		//8.Get purchase orders of customers
+		System.out.println("---------------------");
+		for (Customer cu:c) {
+			if(cu.getpO()!=null) {
+				System.out.println(cu.getName()+"'s total purchase orders are :"+cu.getpO().length);
+			}
+		}
+		System.out.println("---------------------");
+		
+		
+		for (Customer cu: c) {
+			if(cu.getpO()!=null) {
+				System.out.println(cu.getName()+"|"+(new Date()));
+				double sum = 0;
+				int j=1;
+				for (PurchaseOrder p:cu.getpO()) {
+					System.out.println("Order "+j+" contains "+cu.getpO().length+" items:\n"+"+++++++++++++++");
+					int k = 1;
+					for (OrderItem o:p.getItems()) {
+						System.out.println("Order Item"+k+" is : ");
+						System.out.print(o.getNumberOfItems()+"|");
+						System.out.print(o.getStockItem().getItemDescription()+"|");
+						System.out.print(o.getStockItem().getItemPrice()+"|");
+						System.out.println("Total :"+o.getTotal());
+						System.out.println("``````````````````````````");
+						k++;
+					}
+					System.out.println("Total sum of order"+j+" is :"+p.sumItems());
+					sum = sum + p.sumItems();
+					j++;
+				}
+				System.out.println("Total sum of "+cu.getName()+" is :"+sum);
+				
+				System.out.println("====================");
+			}
+		}
+	}
+}
+

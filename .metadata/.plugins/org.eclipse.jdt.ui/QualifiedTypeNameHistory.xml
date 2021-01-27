@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javax.xml.bind.ValidationException"/>
+<fullyQualifiedTypeName name="com.persistent.DataStructures.Stack.Stack"/>
+<fullyQualifiedTypeName name="com.persistent.exception.assignment1.Test.ContactTest"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="java.math.BigInteger"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="com.persistent.exception.assignment1.Contact"/>
+<fullyQualifiedTypeName name="java.time.chrono.ChronoLocalDate"/>
+<fullyQualifiedTypeName name="com.persistent.OrderManagmentSystem.Customer"/>
+<fullyQualifiedTypeName name="com.persistent.InventorySystem.Customer"/>
+<fullyQualifiedTypeName name="com.persistent.InventorySystem.OrderItem"/>
+<fullyQualifiedTypeName name="com.persistent.InventorySystem.StockItem"/>
+<fullyQualifiedTypeName name="com.persistent.InventorySystem.PurchaseOrder"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="com.psl.training.util.DBConnection"/>
+<fullyQualifiedTypeName name="java.sql.Statement"/>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="com.psl.training.service.CustomerService"/>
+<fullyQualifiedTypeName name="com.psl.training.bean.Customer"/>
+<fullyQualifiedTypeName name="com.psl.training.service.PurchaseOrderService"/>
+<fullyQualifiedTypeName name="com.psl.training.bean.PurchaseOrder"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="java.util.Calendar"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="java.time.LocalDate"/>
+<fullyQualifiedTypeName name="com.psl.training.service.StockItemService"/>
+<fullyQualifiedTypeName name="com.psl.training.service.OrderItemService"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="com.psl.training.bean.StockItem"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.psl.training.bean.OrderItem"/>
+<fullyQualifiedTypeName name="com.psl.training.dao.StockDAO"/>
+<fullyQualifiedTypeName name="com.psl.training.dao.PurchaseOrderDAO"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="com.psl.training.dao.OrderItemDAO"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,9 @@
+BranchProjectTracker__C\:\\Users\\Abhishek\ .LAPTOP-23MGEPTG\\git\\Group6Project\\.git_bug=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<projects>\r\n<project>/</project>\r\n</projects>
+BranchProjectTracker__C\:\\Users\\Abhishek\ .LAPTOP-23MGEPTG\\git\\Group6Project\\.git_bugfix=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<projects>\r\n<project>/</project>\r\n</projects>
+BranchProjectTracker__C\:\\Users\\Abhishek\ .LAPTOP-23MGEPTG\\git\\Group6Project\\.git_master=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<projects>\r\n<project>/</project>\r\n</projects>
+StagingView_CompareMode=false
+commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<messages>\r\n<message>Added some code in tester class to test</message>\r\n<message>Changed my database name to order_management_system_db</message>\r\n<message>Added uml file,tester class and some changes on method removeExpireditem&\#x0A;in PurchaseOrder class</message>\r\n<message>modified the method orderBetween in PurchaseOrder.class</message>\r\n<message>DAO classes created without update methods</message>\r\n<message>Added foreign keys to the tables PurchaseOrder and Orderitem.</message>\r\n<message>sample CustomerDAO class created</message>\r\n<message>Created Dao directory</message>\r\n</messages>
+eclipse.preferences.version=1
+repositories_view_filters=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<FilterCache/>
+resourcehistory_graph_split=482,517
+resourcehistory_rev_split=700,300

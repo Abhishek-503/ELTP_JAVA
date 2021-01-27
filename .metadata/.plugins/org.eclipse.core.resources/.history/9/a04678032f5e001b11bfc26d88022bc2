@@ -1,0 +1,78 @@
+package com.psl.training.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.List;
+
+import com.psl.training.bean.Customer;
+import com.psl.training.util.DBConnection;
+
+public class CustomerDAO {
+Connection cn=DBConnection.getConnection();
+	
+	//CRUD
+	public void insertCustomer(Customer c){
+		// code to insert Customer
+		
+		try {
+			PreparedStatement	pstmt = cn.prepareStatement("insert into Customers values(?,?,?,?,?)");
+			
+			pstmt.setInt(1, c.getCustomerNumber());
+			pstmt.setString(2, c.getCustomerName());
+			pstmt.setString(3, c.getHomePhone());
+			pstmt.setString(4, c.getWorkPhone());
+			pstmt.setString(5, c.getStreet());
+			pstmt.setString(5, c.getCity());
+			pstmt.setString(6, c.getState());
+			pstmt.setString(7, c.getZip());
+			pstmt.executeUpdate();
+		
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		
+	}
+	
+	// Statement PreparedStatement CallableStatement
+	
+	public Customer getCustomerById(int id){
+		Customer e=null;
+//		try{
+//			Statement stmt=cn.createStatement();
+//		String qry="select * from Customers where empid="+id;
+//		ResultSet rs=stmt.executeQuery(qry);
+//		if(rs.next()){
+//			e=new Customer();
+//			e.setEmpid(rs.getInt(1));
+//			e.setEmpname(rs.getString(2));
+//			e.setDeptId(rs.getString(3));
+//			e.setJoinDate(rs.getDate(4));
+//			e.setSalary(rs.getLong(5));
+//		}
+//		
+//		}catch (Exception ex) {
+//		}
+		return e;
+	}
+	
+	public List<Customer> getCustomers(){
+		return null;
+		// fetch all Customers from db;
+	}
+	
+	public void updateCustomer(Customer e){
+		// code to update Customer object
+	}
+	
+	public void deleteCustomerById(int id){
+		// delete Customer from DB with matching id
+				
+	}
+	
+	
+}

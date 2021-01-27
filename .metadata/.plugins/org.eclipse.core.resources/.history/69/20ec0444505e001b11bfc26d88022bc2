@@ -1,0 +1,30 @@
+package com.psl.training.dao;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import com.psl.training.bean.StockItem;
+import com.psl.training.util.DBConnection;
+
+public class StockDAO {
+	Connection cn=DBConnection.getConnection();
+	public StockItem showStockItem(int no) {
+		StockItem s=null;
+		try{
+			Statement stmt=cn.createStatement();
+		String qry="select * from stock_item where item_Number="+no;
+		ResultSet rs=stmt.executeQuery(qry);
+		if(rs.next()){
+			s=new StockItem();
+			s.setItemNo(rs.getInt(1));
+			s.setItemDesc(rs.getString(2));
+			s.setItemPrice(rs.getDouble(3));
+			s.setExpiryDate(rs.getDate(4));
+		}
+		
+		}catch (Exception ex) {
+		}
+		return s;
+	}
+}

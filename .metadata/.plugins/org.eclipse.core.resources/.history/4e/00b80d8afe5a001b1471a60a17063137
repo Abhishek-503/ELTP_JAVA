@@ -1,0 +1,36 @@
+/*i.	A pop must fail on an uninitialized stack and empty stack
+ii.	A push must fail on an uninitialized stack and stack which is already full
+iii.	A push must fail on a stack if the Contact object’s validation fails.*/
+
+package com.persistent.exception.assignment1.Test;
+
+import java.sql.Date;
+
+import com.persistent.DataStructures.Stack.Stack;
+import com.persistent.exception.assignment1.Contact;
+
+public class ContactTest  {
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Stack<Contact> s = new Stack<Contact>(10);
+		Contact c = new Contact();
+		/*
+		 * First name, Middle name, Last name, Date of birth, Gender, Anniversary,
+		 * Address, Area, City, Pincode, State, Country, Telephone number, Mobile
+		 * number, Email, Website
+		 */
+		c.setFirst_name("Adam");
+		c.setMiddle_name("Arnold");
+		c.setLast_name("AArian");
+		c.setDate_of_birth(Date.valueOf("1998-06-27"));
+		c.setGender('m');
+		c.setAddress("d.no:16/345");
+		c.getAnniversary();
+		s.push(c);
+		
+		
+		
+	}
+
+}
